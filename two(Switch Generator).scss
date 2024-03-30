@@ -1,0 +1,42 @@
+// <input type="checkbox" id="switch">
+// <label for="switch"></label>
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  display: block;
+  width: 36px;
+  height: 16px;
+  position: relative;
+  border: 1px solid #CCCCCC;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+label:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #CCCCCC;
+  position: absolute;
+  top: 1.8px;
+  left: 2px;
+  transition: 0.2s;
+}
+
+input:checked + label:after {
+  background: #FF9999;
+}
+
+input:checked + label {
+  border: 1px solid #FF9999;
+}
+
+input[type="checkbox"]:checked + label::after {
+    transform: translateX(20px);
+}
+
